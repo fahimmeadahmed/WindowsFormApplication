@@ -1,0 +1,63 @@
+# Visual Studio specific
+.vs/
+*.user
+*.suo
+
+# Build results
+
+
+*.dll
+*.pdb
+*.cache
+*.ilk
+*.log
+*.csv
+*.sqlite
+
+# NuGet packages
+*.nupkg
+# The packages folder can be ignored globally or locally depending on your preference.
+**/packages/*
+# Uncomment if you have NuGet Package Restore enabled.
+# Packages will be restored automatically when building in Visual Studio.
+# !**/packages/build/
+# !**/packages/rebuild/
+# Uncomment if necessary however generally it will be regenerated when needed
+# !**/packages/*.props
+# !**/packages/*.targets
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Microsoft SQL Server files
+*.mdf
+*.ldf
+
+# Visual Studio profiler
+*.psess
+*.vsp
+
+# IIS Express settings
+/.vs/config/applicationhost.config
+
+# Resharper files
+_ReSharper*/
+
+# Node.js related (if you're using npm or Node.js in your project)
+node_modules/
+
+# Log files
+*.log
+
+# IDE directories
+.idea/
+
+# JetBrains Rider related files
+.idea/
