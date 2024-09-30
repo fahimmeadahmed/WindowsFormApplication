@@ -1,0 +1,9 @@
+D:\Courses\WindowsFormApplication\WindowsServiceSample\bin\Debug\WindowsServiceSample.exe.config
+D:\Courses\WindowsFormApplication\WindowsServiceSample\bin\Debug\WindowsServiceSample.exe
+D:\Courses\WindowsFormApplication\WindowsServiceSample\bin\Debug\WindowsServiceSample.pdb
+D:\Courses\WindowsFormApplication\WindowsServiceSample\obj\Debug\WindowsServiceSample.csproj.AssemblyReference.cache
+D:\Courses\WindowsFormApplication\WindowsServiceSample\obj\Debug\WindowsServiceSample.ProjectInstaller.resources
+D:\Courses\WindowsFormApplication\WindowsServiceSample\obj\Debug\WindowsServiceSample.csproj.GenerateResource.cache
+D:\Courses\WindowsFormApplication\WindowsServiceSample\obj\Debug\WindowsServiceSample.csproj.CoreCompileInputs.cache
+D:\Courses\WindowsFormApplication\WindowsServiceSample\obj\Debug\WindowsServiceSample.exe
+D:\Courses\WindowsFormApplication\WindowsServiceSample\obj\Debug\WindowsServiceSample.pdb
