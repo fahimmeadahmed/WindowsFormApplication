@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - Setup1/Debug/setup.exe # Replace with your specific path or file(s) to monitor
+      - Setup2\Debug\setup.exe # Replace with your specific path or file(s) to monitor
 
 jobs:
   build:
@@ -30,7 +30,7 @@ jobs:
       - name: Upload to Google Cloud Storage
         uses: google-github-actions/upload-cloud-storage@v1
         with:
-            path: Setup1/Debug/setup.exe # Set
+            path: Setup2\Debug\setup.exe # Set
             destination: published-apps-backend/app2/appid-${{ vars.APP_ID }}/subid-${{ vars.SUB_ID }}/version-1.0.0
             process_gcloudignore: false
             gzip: true
