@@ -1,0 +1,56 @@
+name: Publish WinForms App
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Setup1/Debug/setup.exe # Replace with your specific path or file(s) to monitor
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Configure Git User Email
+        run: git config --global user.email "info@bikiran.com"
+
+      - name: Configure Git User Name
+        run: git config --global user.name "Kumar Bishojit Paul"
+
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v1
+        with:
+            credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
+      - name: Upload to Google Cloud Storage
+        uses: google-github-actions/upload-cloud-storage@v1
+        with:
+            path: Setup1/Debug/setup.exe # Set
+            destination: published-apps-backend/app2/appid-${{ vars.APP_ID }}/subid-${{ vars.SUB_ID }}/version-1.0.0
+            process_gcloudignore: false
+            gzip: true
+            resumable: true
+            parent: true
+            concurrency: 100
+        env:
+            GCP_PROJECT: ${{ vars.GCP_PROJECT }}
+
+      - name: Notify Publish API
+        run: |
+            $headers = @{
+                "Content-Type" = "application/json"
+            }
+            $body = @{
+                "appId" = ${{ vars.APP_ID }}
+                "subId" = ${{ vars.SUB_ID }}
+                "version" = "1.0.0"
+                "publishType" = "app1"
+                "secret" = "IfpzonhKqTojGAYr2QEecERFIxOf0IYzgkkMfyZd9tKcIvu4hW3S83EQ3vQ9uMp2qwU1b3x3FY7N5YIcKFD2eg3aDhmsW3fNcJPyf1lD7m13z0J9VhvWBEsNYn49rfMi"
+            } | ConvertTo-Json
+            Invoke-RestMethod -Uri "https://portal.miracleadvance.com/SwiftBackendAPI/api/publish/add-new-publish" -Method Post -Headers $headers -Body $body
+        shell: pwsh
